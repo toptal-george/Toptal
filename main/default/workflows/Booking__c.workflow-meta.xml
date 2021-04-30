@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_Patient_Confirmation_Email</fullName>
+        <description>Send Patient Appointment Confirmation Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Patient_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>georgenjthomas@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/mcAppointment_Confirmation</template>
+    </alerts>
+    <rules>
+        <fullName>Send Patient Appointment Confirmation</fullName>
+        <actions>
+            <name>Send_Patient_Confirmation_Email</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Booking__c.Patient_Email__c</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <description>Send Patient Appointment Confirmation email to patient</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>
