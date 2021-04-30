@@ -56,6 +56,8 @@ public  class mcBookAppointmentControllerTest {
             mcBookAppointmentController.uiDetailsWrapper wrp = mcBookAppointmentController.getPhysicians(prodList[0].id);
 
             wrp = mcBookAppointmentController.getPhysiciansCalender(conRec.id);
+
+            System.assertEquals(wrp.hasError, false);
             
         }
 
@@ -71,7 +73,8 @@ public  class mcBookAppointmentControllerTest {
         Test.startTest();
 
         Test.setMock(HttpCalloutMock.class, new mcHttpMock('Google_oAuth_Token',200));
-        mcBookAppointmentController.getPhysiciansCalender(conRec.id);
+        mcBookAppointmentController.uiDetailsWrapper wrp = mcBookAppointmentController.getPhysiciansCalender(conRec.id);
+        System.assertEquals(wrp.hasError, false);
         
     }
 
