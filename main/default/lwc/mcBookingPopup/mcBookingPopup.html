@@ -1,0 +1,28 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            
+            <header class="slds-modal__header">
+                <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate"><b>Booking Details</b></h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <lightning-spinner alternative-text="Loading" size="medium" if:true={showspinner}></lightning-spinner>
+                <p>
+
+                    Department : <b>{bookingDetails.selectedDeptName}</b><br/>
+                    Physician : <b>{bookingDetails.selectedPhyName}</b><br/>
+                    Selected Date & Time: <b>{bookingDetails.selectedDate} &nbsp; {bookingDetails.selectedTime}</b><br/>
+                    
+                    <lightning-input type="text" label="Patient Name" onchange={handleChange}></lightning-input>
+                    <lightning-input type="email" label="Patient Email" onchange={handleChange}></lightning-input>
+                    <lightning-input type="text" label="Description" onchange={handleChange}></lightning-input>
+                </p>
+            </div>
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+                <button class="slds-button slds-button_brand" onclick={handleConfirmBooking}>Confirm Booking</button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

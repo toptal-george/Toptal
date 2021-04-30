@@ -1,0 +1,19 @@
+<template>
+    <lightning-spinner alternative-text="Loading" size="medium" if:true={showspinner}></lightning-spinner>
+    <div class="slds-box slds-theme_shade">
+
+        <b> Welcome to MedClinic</b><br/><br/>
+
+        <template if:true={accessGranted}>
+            <p> Great! You have granted access to your calender. <br/><br/></p>
+        </template>
+
+        <template if:false={accessGranted}>
+            <p>
+                To grant access to your google calender, please click Grant Canlender Access button below. It will open a new page and follow the instruction from google to share the calendar access.
+                <br/><br/>
+            </p>
+            <lightning-button label="Grant Canlender Access" onclick={handleGrantAccess}></lightning-button>
+        </template>
+    </div>
+</template>

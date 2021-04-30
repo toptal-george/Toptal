@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Client_Secret</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Client Secret</shortDescription>
+        <value>WkZeaFFDpRoqhtP71Q8YXn4g</value>
+    </labels>
+    <labels>
+        <fullName>Google_oAuth_ClientId</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Google oAuth ClientId</shortDescription>
+        <value>22645340608-aukq49tuf3v5fvc0lufvlqe17514fob9.apps.googleusercontent.com</value>
+    </labels>
+    <labels>
+        <fullName>OAuth_Redirect_URL</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OAuth Redirect URL</shortDescription>
+        <value>https://magicforce-f-dev-ed--c.visualforce.com/apex/oAuthRedirectPage</value>
+    </labels>
+    <labels>
+        <fullName>oAuth_ClientId</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>oAuth ClientId</shortDescription>
+        <value>22645340608-aukq49tuf3v5fvc0lufvlqe17514fob9.apps.googleusercontent.com</value>
+    </labels>
+</CustomLabels>

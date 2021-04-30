@@ -1,0 +1,53 @@
+<template>
+    
+    <br/>
+    <br/>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-7">
+          <span><b>SUN - {sunday}</b></span> <br/>
+        </div>
+        <div class="slds-col slds-size_1-of-7">
+          <span><b>MON - {monday}</b></span>
+        </div>
+        <div class="slds-col slds-size_1-of-7">
+          <span><b>TUE - {tuesday}</b></span>
+        </div>
+        <div class="slds-col slds-size_1-of-7">
+          <span><b>WED - {wednesday}</b></span>
+        </div>
+        <div class="slds-col slds-size_1-of-7">
+          <span><b>THU - {thursday}</b></span>
+        </div>
+        <div class="slds-col slds-size_1-of-7">
+          <span><b>FRI - {friday}</b></span>
+        </div>
+        <div class="slds-col slds-size_1-of-7">
+          <span><b>SAT - {saturday}</b></span>
+        </div>
+
+
+        <div class="slds-col slds-size_1-of-7">
+            <c-mc-calender-times booked-times={sunBooked} booking-details={bookingDetails} this-date={sunday} onrefreshcalender={handlerefresh}></c-mc-calender-times>
+          </div>
+          <div class="slds-col slds-size_1-of-7">
+            <c-mc-calender-times booked-times={monBooked} booking-details={bookingDetails} this-date={monday} onrefreshcalender={handlerefresh}></c-mc-calender-times>
+          </div>
+          <div class="slds-col slds-size_1-of-7">
+            <c-mc-calender-times booked-times={tueBooked} booking-details={bookingDetails} this-date={tuesday} onrefreshcalender={handlerefresh}></c-mc-calender-times>
+          </div>
+          <div class="slds-col slds-size_1-of-7">
+            <c-mc-calender-times booked-times={wedBooked} booking-details={bookingDetails} this-date={wednesday} onrefreshcalender={handlerefresh}></c-mc-calender-times>
+          </div>
+          <div class="slds-col slds-size_1-of-7">
+            <c-mc-calender-times booked-times={thuBooked} booking-details={bookingDetails} this-date={thursday} onrefreshcalender={handlerefresh}></c-mc-calender-times>
+          </div>
+          <div class="slds-col slds-size_1-of-7">
+            <c-mc-calender-times booked-times={friBooked} booking-details={bookingDetails} this-date={friday} onrefreshcalender={handlerefresh}></c-mc-calender-times>
+          </div>
+          <div class="slds-col slds-size_1-of-7">
+            <c-mc-calender-times booked-times={satBooked} booking-details={bookingDetails} this-date={saturday} onrefreshcalender={handlerefresh}></c-mc-calender-times>
+        </div>
+
+
+      </div>
+</template>

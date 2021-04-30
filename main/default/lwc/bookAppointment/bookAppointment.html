@@ -1,0 +1,56 @@
+<template>      
+        <div class="slds-box slds-theme_shade">
+                <br/>Select the Specializations and Physicians to start the booking <br/><br/>
+                <lightning-spinner alternative-text="Loading" size="medium" if:true={showspinner}></lightning-spinner>
+                <div class="slds-grid slds-grid_vertical">
+                        <!-- Display Specializations-->
+                        <div class="slds-col" style="width:20%">
+                                <lightning-combobox if:true={showSpecicializations} 
+                                        name="Specializations"
+                                        label="Specializations"
+                                        value={Specialization}
+                                        placeholder="Select a specialization"
+                                        options={spcialOptions}
+                                        onchange={handleSpecilization} >
+                                </lightning-combobox>
+                        </div>
+
+                        <!-- Display Price-->
+                        <div class="slds-col" style="width:20%" if:true={deptPrice}>
+                                Price : $<lightning-formatted-number value={deptPrice} format-style="decimal"></lightning-formatted-number>
+                        </div>
+
+                        <!-- Display Physicians-->
+                        <div class="slds-col" style="width:20%">
+                                <lightning-combobox if:true={showPhysicians} 
+                                        name="Physicians"
+                                        label="Physicians"
+                                        value={physicians}
+                                        placeholder="Select a physician"
+                                        options={physicians}
+                                        onchange={handlePhysicians} >
+                                </lightning-combobox>
+                        </div>
+
+
+                        
+                        <!-- Display Calendar-->
+                        <div class="slds-col" if:true={showPhyCalender} style="width:80%">
+                                <br/><br/>
+                                <div class="slds-grid slds-wrap">
+                                        <div class="slds-col slds-size_1-of-7">
+                                                <lightning-button name="Previous" label="Previous Dates" onclick={handlePrevDates}></lightning-button>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-7"></div>
+                                        <div class="slds-col slds-size_1-of-7"></div>
+                                        <div class="slds-col slds-size_1-of-7"></div>
+                                        <div class="slds-col slds-size_1-of-7"></div>
+                                        <div class="slds-col slds-size_1-of-7"></div>
+                                        <div class="slds-col slds-size_1-of-7"><lightning-button name="Next" label="Next Dates" onclick={handleNextDates}></lightning-button></div>
+                                </div>
+                                
+                                <c-mc-calender next-dates={nextDates} booked-datetimes={bookedDatetimes} booking-details={bookingDetails} onrefreshcalender={handleRefreshCaldr} ></c-mc-calender>
+                        </div>
+                </div>
+        </div>
+</template>

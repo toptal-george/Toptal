@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-grid slds-grid_vertical">
+        <template if:true={noSlotsAvailable}>
+            <span> <b>Not available</b></span>
+        </template>
+        <template if:false={noSlotsAvailable}>
+            <template for:each={availbleTimes} for:item="time">
+                <div class="slds-col" style="padding-top:10px" key={time} >
+                    <lightning-button label={time}  title={time} onclick={handleClickTime} data-time={time}></lightning-button>
+                </div>
+            </template>
+        </template>
+    </div>
+
+
+    <!-- Show booking pop up-->
+    <template if:true={showbookingpopup}>
+        <c-mc-booking-popup onclose={handleCloseBooking} booking-details={bookingDetails}></c-mc-booking-popup>
+    </template>
+
+</template>
