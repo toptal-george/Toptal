@@ -1,0 +1,17 @@
+Dear {!Booking__c.Patient_Name__c},
+
+<br/><br/>
+
+Your booking with our {!Booking__c.Department__c}  department has been confirmed.<br/><br/>
+
+Here are the booking details <br/><br/>
+
+Physician : {!Booking__c.Physician__c}<br/>
+
+Date & Time : <b>{!DATETIMEVALUE(Booking__c.Start_Date__c)}  to {!DATETIMEVALUE(Booking__c.End_Date__c)} </b><br/>
+
+Notes : {!Booking__c.Description__c}<br/><br/>
+
+Thank you<br/>
+
+MedClinc Team
