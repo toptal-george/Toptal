@@ -1,3 +1,9 @@
+/*
+	
+	Description : Controller to manage the calendar booking
+
+*/
+
 public with sharing class mcBookAppointmentController {
 
     public list<Product2> productList {get;set;}
@@ -7,12 +13,15 @@ public with sharing class mcBookAppointmentController {
         productList = new list<Product2>();
     }
 
+    //Return all spcilizations
+
     @AuraEnabled
     public static list<Product2> getAllSpecilizations(){
 
         return [Select name from Product2 where isActive=true];
     }
 
+	//Return all physicians for a spcilizations
     @AuraEnabled
     public static uiDetailsWrapper getPhysicians(String departmentId){
         uiDetailsWrapper wrp = new uiDetailsWrapper();
@@ -29,6 +38,7 @@ public with sharing class mcBookAppointmentController {
 
     }
 
+	//Return all physicians calendar
     @AuraEnabled
     public static uiDetailsWrapper getPhysiciansCalender(String conId){
 
@@ -127,6 +137,8 @@ public with sharing class mcBookAppointmentController {
         return wrp;
     }
 
+
+	//Return all physicians calendar events
     @AuraEnabled
     public static uiDetailsWrapper getEvents(String primaryCalid,String accessToken, String ContactId,Integer pageNo){
 
@@ -198,6 +210,8 @@ public with sharing class mcBookAppointmentController {
         return wrp;
     }
 
+
+	//Create calendar event on physicians google calendar
     @AuraEnabled
     public static bookEventRespWrapper createGoogleCalenderEvent(String request){
         try {
@@ -301,6 +315,7 @@ public with sharing class mcBookAppointmentController {
 
     }
 
+    //Wrapper class to send details to UI
     public class uiDetailsWrapper{
         @AuraEnabled public string primaryCalid{get;set;}
         @AuraEnabled public List<Contact> conList{get;set;}

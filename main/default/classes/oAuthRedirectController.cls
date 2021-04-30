@@ -1,9 +1,13 @@
+/*
+    
+    Description: Controller to handle authentication
+*/
 public without sharing class oAuthRedirectController {
     public string  oAuthCode {get;set;}
     public string  userId {get;set;}
     public User userRec {get;set;}
 
-    
+    //Method to read the url params returned from oAuth
     public oAuthRedirectController() {
         try{
             oAuthCode = Apexpages.currentPage().getParameters().get('code');
@@ -16,6 +20,7 @@ public without sharing class oAuthRedirectController {
 
     }
 
+    //Updte the oAuth codes in contact record
     public Pagereference updateAuthCode(){
         try{
             Contact conRec;
@@ -67,7 +72,7 @@ public without sharing class oAuthRedirectController {
         }
     }
 
-
+    //Return back to lightning app
     public Pagereference goBack(){
         Pagereference pg = new Pagereference('/lightning/page/home');
         pg.setRedirect(false);

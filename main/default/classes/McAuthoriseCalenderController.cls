@@ -1,5 +1,11 @@
+/*
+    
+    Description : Controller to handle calendar authorisation 
+*/
 public with sharing class McAuthoriseCalenderController {
 
+
+    //Return calendar details from contact record
     @AuraEnabled
     public static mcAuthWrapper getCalendarInfo(){
         try {
@@ -14,6 +20,9 @@ public with sharing class McAuthoriseCalenderController {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+
+    //Return calendar grant access from contact record
 
     @AuraEnabled
     public static boolean hasGrantedCalender(){
@@ -33,6 +42,8 @@ public with sharing class McAuthoriseCalenderController {
         }
     }
 
+
+    //Return the oAuth calendar url
     @AuraEnabled
     public static mcAuthWrapper getoAuthUrl(){
         mcAuthWrapper wrp = new mcAuthWrapper();
@@ -57,7 +68,7 @@ public with sharing class McAuthoriseCalenderController {
         }
     }
 
-
+    //Wrapper class to hold the calendar authentication tokens
     public class mcAuthWrapper{
         @AuraEnabled public string oAuthUrl {get;set;}
         @AuraEnabled public string userid {get;set;}

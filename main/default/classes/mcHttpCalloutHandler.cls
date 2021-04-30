@@ -1,5 +1,6 @@
 public class mcHttpCalloutHandler {
-    
+
+    //Method to send http request
     public static HttpResponse sendCallout(String endPoint, String requestBody, string httpReqType, map<String,String> httpHeadersMap){
 
         System.debug('endPoint:'+endPoint);
